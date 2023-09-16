@@ -101,7 +101,7 @@ class UddoktaPayInternational
 
         if (!empty($this->gatewayCurrency) && ($this->customerCurrency !== $this->gatewayCurrency)) {
             $this->convoRate = Capsule::table('tblcurrencies')
-                ->where('id', '=', $this->gatewayCurrency)
+                ->where('id', '=', $this->customerCurrency)
                 ->value('rate');
         } else {
             $this->convoRate = 1;
