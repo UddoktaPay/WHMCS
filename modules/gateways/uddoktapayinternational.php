@@ -20,6 +20,11 @@ function uddoktapayinternational_config()
             'FriendlyName' => 'API URL',
             'Type' => 'text',
             'Size' => '50'
+        ],
+        'exchange_rate' => [
+            'FriendlyName' => 'Exchange Rate [1 USD = ? BDT]',
+            'Type' => 'text',
+            'Size' => '50'
         ]
     ];
 }

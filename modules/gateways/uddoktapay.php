@@ -20,6 +20,11 @@ function uddoktapay_config()
             'FriendlyName' => 'API URL',
             'Type' => 'text',
             'Size' => '50'
+        ],
+        'exchange_rate' => [
+            'FriendlyName' => 'Exchange Rate [1 USD = ? BDT]',
+            'Type' => 'text',
+            'Size' => '50'
         ]
     ];
 }
@@ -32,8 +37,8 @@ function uddoktapay_link($params)
     $errorMsg = uddoktapay_errormessage();
     $invoiceId = $params['invoiceid'];
     $sessionMessage = $_SESSION["up_pending_invoice_id_{$invoiceId}"];
-    
-    if(isset($sessionMessage) && !empty($sessionMessage)){
+
+    if (isset($sessionMessage) && !empty($sessionMessage)) {
         return '<div class="alert alert-danger" style="margin-top: 10px;" role="alert">' . $sessionMessage . '</div>';
     }
 
